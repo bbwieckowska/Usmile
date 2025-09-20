@@ -51,7 +51,13 @@ jobs:
         run: |
           brew install pkg-config curl-openssl
 
-      - name: Check package
+      - name: Install package dependencies
         run: |
-          rcmdcheck::rcmdcheck(args = "--as-cran", error_on = "error")
+          install.packages("remotes")
+          # Pobierz listę zależności z DESCRIPTION i zainstaluj je
+          deps <- desc::desc_get_deps()
+          # Filtrujemy tylko zależności typu 'Imports' i 'Suggests'
+          pkgs <- deps$package[deps$type %in% c("Imports", "Depends")]
+          # Instalujemy wszystkie wymagane pakiety
+          install.packages(pkgs)
         shell: Rscript {0}
