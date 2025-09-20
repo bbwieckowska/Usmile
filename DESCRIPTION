@@ -1,5 +1,5 @@
 Package: Usmile
-Title: U-smile method
+Title: U-smile Method
 Version: 0.0.1
 Authors@R: 
     person("Barbara", "Więckowska", , "bbwieckowska@gmail.com", role = c("aut", "cre"))
