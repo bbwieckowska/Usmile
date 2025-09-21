@@ -90,7 +90,7 @@ We welcome contributions! Please feel free to submit issues, feature requests, o
 :scroll: Citation
 If you use Usmile in your research, please cite our publication:
 
-Więckowska, B. (2025). U-smile: an R package and Shiny application for visual comparison of binary classifiers. (publication i n progres, TODO: Add full citation after acceptance)
+Więckowska, B. U-smile: an R package and Shiny application for visual comparison of binary classifiers. [Under Review]
 
 :page_facing_up: License
 The Usmile package is released under the MIT license. See the LICENSE file for details.
