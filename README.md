@@ -65,4 +65,32 @@ results_test <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR", dataset
 USplot(plot_data = results_train$plot_data, y_coef = "rLR", net = TRUE, crit = 2)
 USplot(plot_data = results_test$plot_data, y_coef = "rLR", net = TRUE, crit = 2)
 ```
-# Usmile plots <img src="man/figures/quickstart_plot.png"/>
+Usmile plots <img src="man/figures/quickstart_plot.png"/>
+:bar_chart: Example Workflow
+The package supports multiple workflows:
+
+From Models & Data: USplot(ref_formula, new_formula, ref_model_type, new_model_type, train_data, y_coef,...)
+
+From Predictions: USplot(raw_data, n_vars_diff, y_coef, ...)
+
+From Descriptors: USplot(plot_data, y_coef,...)
+
+## 📖 Documentation
+
+Comprehensive PDF documentation is available for download:
+
+- **📦 Package Manual:** [Usmile_0.0.1.pdf](Usmile_0.0.1.pdf) - Complete reference for all functions and methods in the `Usmile` R package.
+- **🌐 Shiny App Guide:** [UsmileShiny_0.0.1.pdf](UsmileShiny_0.0.1.pdf) - Detailed user manual for the interactive Shiny application.
+
+> **Tip:** Right-click on the links and select "Save link as..." to download the PDFs.
+
+:handshake: Contributing
+We welcome contributions! Please feel free to submit issues, feature requests, or pull requests on GitHub. By participating in this project, you agree to abide by a Code of Conduct.
+
+:scroll: Citation
+If you use Usmile in your research, please cite our publication:
+
+Więckowska, B. (2025). U-smile: an R package and Shiny application for visual comparison of binary classifiers. (publication i n progres, TODO: Add full citation after acceptance)
+
+:page_facing_up: License
+The Usmile package is released under the MIT license. See the LICENSE file for details.
