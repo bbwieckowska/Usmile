@@ -17,7 +17,7 @@ Status badges - Update these links once you set up CI/CD and a release!
 
 **User-centric Statistical Measures for Interpretable Learning Explanations**
 
-The `Usmile` R package provides a **threshold-free** and **asymmetric** method for evaluating and comparing binary classifiers, with a focus on biomedical applications and class imbalance. It produces distinctive "smile"-shaped plots that visually reveal class-specific performance improvements or deteriorations, which often remain hidden in traditional metrics like ROC or Precision-Recall curves.
+The `Usmile` R package provides a **threshold-free** and **asymmetric** (and class-specific) method for evaluating and comparing binary classifiers, with a focus on biomedical applications and class imbalance. It produces distinctive "smile"-shaped plots that visually reveal class-specific performance improvements or deteriorations, which often remain hidden in traditional metrics like ROC or Precision-Recall curves.
 
 > **💡 Prefer a point-and-click interface? Try the companion Shiny app: [https://barbarawieckowska.shinyapps.io/ShinyApp/](https://barbarawieckowska.shinyapps.io/ShinyApp/)**
 
