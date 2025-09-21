@@ -65,3 +65,4 @@ results_test <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR", dataset
 USplot(plot_data = results_train$plot_data, y_coef = "rLR", net = TRUE, crit = 2)
 USplot(plot_data = results_test$plot_data, y_coef = "rLR", net = TRUE, crit = 2)
 ```
+# Usmile plots <img src="man/figures/quickstart_plot.png"/>
