@@ -48,9 +48,9 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Check
+      - name: Install rcmdcheck
         run: |
-          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "warning")
+          install.packages("rcmdcheck")
         shell: Rscript {0}
 
       - name: Check
