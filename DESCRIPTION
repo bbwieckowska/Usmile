@@ -1,0 +1,24 @@
+Package: Usmile
+Title: U-Smile Method
+Version: 0.0.1
+Authors@R: 
+    person("Barbara", "Więckowska", , "bbwieckowska@gmail.com", role = c("aut", "cre"))
+Description: Implements the U-smile method for predictive models evaluation. 
+    Computes performance metrics (BA/BR/I/rLR) and generates U-smile plots.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    caret,
+    earth,
+    ggplot2,
+    pROC,
+    PRROC,
+    randomForest,
+    Rcpp (>= 1.0.7)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+URL: https://github.com/bbwieckowska/Usmile
+BugReports: https://github.com/bbwieckowska/Usmile/issues
