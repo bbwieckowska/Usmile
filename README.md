@@ -59,7 +59,7 @@ family = "binomial")
 
 # Calculate the U-smile coefficients on the train and test data set
 results_train <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR")
-results_test <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR", dataset = test_data, testing=TRUE)
+results_test <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR", dataset = heart_disease_test, testing=TRUE)
 
 # Generate the U-smile plot on the train and test data set
 USplot(plot_data = results_train$plot_data, y_coef = "rLR", net = TRUE, crit = 2)
