@@ -1,6 +1,6 @@
 Package: Usmile
 Title: U-Smile Method
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person("Barbara", "Więckowska", , "bbwieckowska@gmail.com", role = c("aut", "cre"))
 Description: Implements the U-smile method for predictive models evaluation. 
