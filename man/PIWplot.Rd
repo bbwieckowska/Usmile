@@ -38,8 +38,8 @@ data(heart_disease_train)
 data(heart_disease_test)
 
 # Prepare model outputs
-model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
-model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
+model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 
 train_out_ref <- USprep_mdl(model_glm_ref, dataset = NULL, testing = FALSE)
 train_out_new <- USprep_mdl(model_glm_new, dataset = NULL, testing = FALSE)
@@ -49,8 +49,8 @@ PIWplot(data_ref = train_out_ref, data_new = train_out_new,
         title = "Prediction Changes: Adding CP to Cardiac Risk Model")
 
 # Example with test data
-test_out_ref <- USprep_mdl(model_glm_ref, dataset = test_data, testing = TRUE)
-test_out_new <- USprep_mdl(model_glm_new, dataset = test_data, testing = TRUE)
+test_out_ref <- USprep_mdl(model_glm_ref, dataset = heart_disease_test, testing = TRUE)
+test_out_new <- USprep_mdl(model_glm_new, dataset = heart_disease_test, testing = TRUE)
 
 PIWplot(data_ref = test_out_ref, data_new = test_out_new,
         title = "Test Data Prediction Changes")

@@ -39,14 +39,14 @@ preds <- predict(model_rf, type = "prob")[, 2]
 
 # Calibrate predictions using isotonic regression
 calibrated_preds <- USclbr_mdl(
-  y = as.numeric(train_data$disease) - 1,
+  y = as.numeric(heart_disease_train$disease) - 1,
   p = preds,
   method = "isotonic"
 )
 
 # Calibrate predictions using logistic regression with 5-fold CV
 calibrated_preds_log <- USclbr_mdl(
-  y = as.numeric(train_data$disease) - 1,
+  y = as.numeric(heart_disease_train$disease) - 1,
   p = preds,
   method = "logistic",
   n_folds = 5

@@ -58,29 +58,29 @@
 #' # For Logistic Regression model (glm)
 #'
 #' # For logistic regression model (reference model with age, sex, bp, chol)
-#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
+#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
 #' train_out_glm_ref <- USprep_mdl(model_glm_ref, dataset = NULL, testing = FALSE)
-#' test_out_glm_ref <- USprep_mdl(model_glm_ref, dataset = test_data, testing = TRUE)
+#' test_out_glm_ref <- USprep_mdl(model_glm_ref, dataset = heart_disease_test, testing = TRUE)
 #'
 #' # For Random Forest model (randomForest package)
-#' model_rf_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = train_data)
+#' model_rf_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = heart_disease_train)
 #' train_out_rf_ref <- USprep_mdl(model_rf_ref, dataset = NULL, testing = FALSE)
-#' test_out_rf_ref <- USprep_mdl(model_rf_ref, dataset = test_data, testing = TRUE)
+#' test_out_rf_ref <- USprep_mdl(model_rf_ref, dataset = heart_disease_test, testing = TRUE)
 #'
 #' # For Random Forest model (ranger package)
-#' model_ranger <- ranger(disease ~ age + sex + bp + chol, data = train_data,
+#' model_ranger <- ranger(disease ~ age + sex + bp + chol, data = heart_disease_train,
 #'                       probability = TRUE, keep.inbag = TRUE)
-#' train_result_ranger <- USprep_mdl(model_ranger, dataset = train_data, testing = FALSE)
+#' train_result_ranger <- USprep_mdl(model_ranger, dataset = heart_disease_train, testing = FALSE)
 #'
 #' # For SVM model (e1071 package)
-#' model_svm <- svm(disease ~ age + sex + bp + chol, data = train_data,
+#' model_svm <- svm(disease ~ age + sex + bp + chol, data = heart_disease_train,
 #'                 probability = TRUE, kernel = "radial")
-#' train_result_svm <- USprep_mdl(model_svm, dataset = train_data, testing = FALSE)
+#' train_result_svm <- USprep_mdl(model_svm, dataset = heart_disease_train, testing = FALSE)
 #'
 #' # For Neural Network model (nnet package)
-#' train_data_scaled <- train_data
+#' train_data_scaled <- heart_disease_train
 #' numeric_vars <- c("age", "bp", "chol")
-#' train_data_scaled[numeric_vars] <- scale(train_data[numeric_vars])
+#' train_data_scaled[numeric_vars] <- scale(heart_disease_train[numeric_vars])
 #' model_formula <- disease ~ age + sex + bp + chol
 #' model_matrix_train <- model.matrix(model_formula, data = train_data_scaled)[,-1]
 #' model_nnet <- nnet(x = model_matrix_train,
@@ -91,16 +91,16 @@
 #' train_result_nnet <- USprep_mdl(model_nnet, dataset = model_matrix_with_y, testing = FALSE)
 #'
 #' # For Naive Bayes model (naivebayes package)
-#' model_nb <- naive_bayes(disease ~ age + sex + bp + chol, data = train_data)
-#' train_result_nb <- USprep_mdl(model_nb, dataset = train_data, testing = FALSE)
+#' model_nb <- naive_bayes(disease ~ age + sex + bp + chol, data = heart_disease_train)
+#' train_result_nb <- USprep_mdl(model_nb, dataset = heart_disease_train, testing = FALSE)
 #'
 #' # For tidymodels/parsnip models
 #' model_spec <- logistic_reg() %>% set_engine("glm") %>% set_mode("classification")
-#' model_tidymodels <- model_spec %>% fit(disease ~ age + sex + bp + chol, data = train_data)
+#' model_tidymodels <- model_spec %>% fit(disease ~ age + sex + bp + chol, data = heart_disease_train)
 #' train_result_tidy <- USprep_mdl(model_tidymodels, dataset = NULL, testing = FALSE)
 #'
 #' # With calibration
-#' model_for_calib <- glm(disease ~ age + sex + bp + chol, data = train_data, family = binomial)
+#' model_for_calib <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = binomial)
 #' train_result_calibrated <- USprep_mdl(model_for_calib, dataset = NULL, testing = FALSE,
 #'   calibrate = TRUE, calibration_method = "isotonic")
 #' }

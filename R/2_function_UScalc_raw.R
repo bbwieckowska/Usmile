@@ -31,9 +31,9 @@
 #' data(heart_disease_test)
 #'
 #' # Prepare raw predictions from models
-#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
+#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
 #' train_out_glm_ref <- USprep_mdl(model_glm_ref, dataset = NULL, testing = FALSE)
-#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 #' train_out_glm_new <- USprep_mdl(model_glm_new, dataset = NULL, testing = FALSE)
 #'
 #' # Combine raw data for comparison

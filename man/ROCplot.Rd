@@ -48,8 +48,8 @@ data(heart_disease_train)
 data(heart_disease_test)
 
 # Prepare model outputs
-model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
-model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
+model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 
 train_out_ref <- USprep_mdl(model_glm_ref, dataset = NULL, testing = FALSE)
 train_out_new <- USprep_mdl(model_glm_new, dataset = NULL, testing = FALSE)
@@ -74,8 +74,8 @@ ROCplot(
 )
 
 # Example with test data
-test_out_ref <- USprep_mdl(model_glm_ref, dataset = test_data, testing = TRUE)
-test_out_new <- USprep_mdl(model_glm_new, dataset = test_data, testing = TRUE)
+test_out_ref <- USprep_mdl(model_glm_ref, dataset = heart_disease_test, testing = TRUE)
+test_out_new <- USprep_mdl(model_glm_new, dataset = heart_disease_test, testing = TRUE)
 
 ROCplot(
   data_ref = test_out_ref,

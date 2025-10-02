@@ -34,14 +34,14 @@
 #' data(heart_disease_test)
 #'
 #' # Compare two logistic regression models
-#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
-#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
+#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 #'
 #' # Calculate rLR coefficients on training and test data
 #' train_results_rLR <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR",
 #'                          dataset = NULL, testing = FALSE)
 #' test_results_rLR <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR",
-#'                          dataset = test_data, testing = TRUE)
+#'                          dataset = heart_disease_test, testing = TRUE)
 #'
 #' # Calculate BA coefficients on training data
 #' train_results_BA <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "BA",
@@ -53,7 +53,7 @@
 #'
 #' # Compare Random Forest to logistic regression
 #' # (both models must be built based on the same variables)
-#' model_fr_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = train_data)
+#' model_fr_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = heart_disease_train)
 #' train_results_rf_vs_glm <- UScalc_mdl(model_glm_ref, model_rf_ref, y_coef = "rLR",
 #'                                dataset = NULL, testing = FALSE)
 #' }

@@ -85,8 +85,8 @@ data(heart_disease_train)
 data(heart_disease_test)
 
 # Building models
-model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
-model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
+model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 
 # Example 1: Using pre-calculated plot data
 train_results <- UScalc_mdl(model_glm_ref, model_glm_new, y_coef = "rLR")
@@ -118,7 +118,7 @@ USplot(ref_formula = disease ~ age + sex + bp + chol,
        new_formula = disease ~ age + sex + bp + chol + cp,
        ref_model_type = "glm",
        new_model_type = "glm",
-       train_data = train_data,
+       train_data = heart_disease_train,
        testing = FALSE,
        y_coef = "rLR")
 
@@ -127,8 +127,8 @@ USplot(ref_formula = disease ~ age + sex + bp + chol,
        new_formula = disease ~ age + sex + bp + chol + cp,
        ref_model_type = "glm",
        new_model_type = "glm",
-       train_data = train_data,
-       test_data = test_data,
+       train_data = heart_disease_train,
+       test_data = heart_disease_test,
        testing = TRUE,
        y_coef = "rLR")
 
@@ -137,7 +137,7 @@ USplot(ref_formula = disease ~ age + sex + bp + chol,
        new_formula = disease ~ age + sex + bp + chol + cp,
        ref_model_type = "glm",
        new_model_type = "glm",
-       train_data = train_data,
+       train_data = heart_disease_train,
        testing = FALSE,
        y_coef = "rLR",
        net = TRUE,
@@ -148,8 +148,8 @@ USplot(ref_formula = disease ~ age + sex + bp + chol,
        new_formula = disease ~ age + sex + bp + chol + cp,
        ref_model_type = "randomForest",
        new_model_type = "randomForest",
-       train_data = train_data,
-       test_data = test_data,
+       train_data = heart_disease_train,
+       test_data = heart_disease_test,
        testing = TRUE,
        y_coef = "rLR",
        calibrate = TRUE)
@@ -159,7 +159,7 @@ USplot(ref_formula = disease ~ age + sex,
        new_formula = disease ~ age + sex,
        ref_model_type = "glm",
        new_model_type = "randomForest",
-       train_data = train_data,
+       train_data = heart_disease_train,
        y_coef = "rLR")
 
 # Ex 5: Compare randomForest with calibrated randomForest on test data
@@ -167,8 +167,8 @@ USplot(ref_formula = disease ~ age + sex,
        new_formula = disease ~ age + sex,
        ref_model_type = "randomForest",
        new_model_type = "randomForest",
-       train_data = train_data,
-       test_data = test_data,
+       train_data = heart_disease_train,
+       test_data = heart_disease_test,
        testing = TRUE,
        ref_calibrate = FALSE,
        new_calibrate = TRUE,

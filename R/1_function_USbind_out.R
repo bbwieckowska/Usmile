@@ -23,9 +23,9 @@
 #' data(heart_disease_test)
 #'
 #' ### Example 1: Comparing nested logistic regression models
-#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = train_data, family = "binomial")
+#' model_glm_ref <- glm(disease ~ age + sex + bp + chol, data = heart_disease_train, family = "binomial")
 #' train_out_glm_ref <- USprep_mdl(model_glm_ref, dataset = NULL, testing = FALSE)
-#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = train_data, family = "binomial")
+#' model_glm_new <- glm(disease ~ age + sex + bp + chol + cp, data = heart_disease_train, family = "binomial")
 #' train_out_glm_new <- USprep_mdl(model_glm_new, dataset = NULL, testing = FALSE)
 #'
 #' # Combine outputs for comparison
@@ -34,7 +34,7 @@
 #' combined_glm$n_vars_diff  # Shows difference in number of parameters
 #'
 #' ### Example 2: Comparing logistic regression with Random Forest
-#' model_rf_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = train_data)
+#' model_rf_ref <- randomForest::randomForest(disease ~ age + sex + bp + chol, data = heart_disease_train)
 #' train_out_rf_ref <- USprep_mdl(model_rf_ref, dataset = NULL, testing = FALSE)
 #'
 #' # Combine with logistic regression output
