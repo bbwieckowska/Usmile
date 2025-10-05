@@ -79,7 +79,7 @@ From Descriptors: USplot(plot_data, y_coef,...)
 
 Comprehensive PDF documentation is available for download:
 
-- **📦 Package Manual:** [Usmile_0.1.0.pdf](Usmile_0.0.1.pdf) - Complete reference for all functions and methods in the `Usmile` R package.
+- **📦 Package Manual:** [Usmile_0.1.0.pdf](Usmile_0.1.0.pdf) - Complete reference for all functions and methods in the `Usmile` R package.
 - **🌐 Shiny App Guide:** [UsmileShiny_0.1.0.pdf](UsmileShiny_0.1.0.pdf) - Detailed user manual for the interactive Shiny application.
 
 > **Tip:** Right-click on the links and select "Save link as..." to download the PDFs.
